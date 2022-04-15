@@ -1,5 +1,5 @@
 // defining the boundary
-border C(t=0,2*pi){x=cos(t); y=sin(t);}
+border B(t=0,2*pi){x=cos(t); y=sin(t);}
 // the triangulated domain Th is on the left side of its boundary
 mesh Th = buildmesh (C(50));
 // the finite element space defined over Th is called here Vh
@@ -13,3 +13,4 @@ int2d(Th)(dx(u)*dx(v) + dy(u)*dy(v)) // bilinear part
 + on(C,u=0) ; // Dirichlet boundary condition
 plot(u);
 cout << " CPU time = " << clock()-cpu << endl;
+
